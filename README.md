@@ -29,3 +29,4 @@ BravoBall's landing page showcases our core value proposition: delivering person
 - Add multi-language support
 - Expand feature highlights
 - Add mobile app store links
+# baddie_landing_page
