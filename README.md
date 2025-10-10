@@ -1,16 +1,16 @@
-# BravoBall Landing Page
+# Baddie Landing Page
 
-A modern, responsive landing page for BravoBall - an AI-powered soccer training app.
+A modern, responsive landing page for Baddie - a smart styling and attractiveness rating app.
 
 ## Overview
 
-BravoBall's landing page showcases our core value proposition: delivering personalized soccer training sessions through AI technology. Built with React and TypeScript, the page features a clean, engaging design with smooth animations and a clear call-to-action.
+Baddie's landing page showcases our core value proposition: delivering personalized styling recommendations and attractiveness ratings. Built with React and TypeScript, the page features a clean, engaging design with smooth animations and a clear call-to-action.
 
 ## Key Features
 
 - Responsive design that works on all devices
-- Interactive Rive animation of BravoBall mascot
-- Clean, modern UI inspired by Duolingo's simplicity
+- Interactive Rive animation
+- Clean, modern UI with sophisticated color scheme
 - Optimized for conversion with clear CTAs
 - Smooth scroll animations and transitions
 
@@ -29,4 +29,3 @@ BravoBall's landing page showcases our core value proposition: delivering person
 - Add multi-language support
 - Expand feature highlights
 - Add mobile app store links
-# baddie_landing_page

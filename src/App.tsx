@@ -1,119 +1,104 @@
 import React, { useState } from 'react';
-import { useRive } from 'rive-react';
 import styled from '@emotion/styled';
-import { Layout, Fit, Alignment } from 'rive-react';
-import { SignUpModal } from './components/SignUpModal';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { SignUpPage } from './SignUp';
 import { FeatureSection } from './components/FeatureSection';
 import { BenefitCard } from './components/BenefitCard';
+import { EmailSignupModal } from './components/EmailSignupModal';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ReleaseNotes from './components/ReleaseNotes';
-import DeleteAccountInfo from './components/DeleteAccountInfo';
 
 type ButtonProps =
   | (React.ButtonHTMLAttributes<HTMLButtonElement> & { as?: 'button'; to?: string })
   | (React.AnchorHTMLAttributes<HTMLAnchorElement> & { as: 'a'; href: string });
 
 function App() {
-  const { RiveComponent } = useRive({
-    src: 'Bravo_Panting.riv',
-    autoplay: true,
-    stateMachines: 'State Machine 1',
-    animations: 'Panting',
-    layout: new Layout({ fit: Fit.Contain, alignment: Alignment.Center }),
-  });
-
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleOpenModal = () => setIsModalOpen(true);
 
   const benefits = [
     {
-      icon: '🤖',
-      title: 'AI-Powered Training',
-      description: 'Personalized drills that adapt to your level'
+      icon: '📸',
+      title: 'Photo Analysis',
+      description: 'Advanced image processing for detailed insights'
     },
     {
-      icon: '⚽️',
-      title: 'Equipment Flexible',
-      description: 'Train with whatever you have available'
+      icon: '⭐',
+      title: 'Multi-Category Scoring',
+      description: 'Detailed ratings across 7 categories'
     },
     {
-      icon: '⚡️',
-      title: 'Follow-Along Training',
-      description: 'Video-guided drills with timing and instructions'
+      icon: '🎯',
+      title: 'Personalized Tasks',
+      description: 'Ultra-specific improvement recommendations'
     },
     {
-      icon: '📈',
-      title: 'Progress Tracking',
-      description: 'Monitor your improvement over time'
+      icon: '📊',
+      title: 'Track Progress',
+      description: 'Monitor your transformation over time'
     }
   ];
 
   const features = [
     {
-      imageSrc: '/bravoball_main.png',
-      imageAlt: 'Session Generator Interface',
-      title: 'Smart Session Generator',
-      description: 'Our AI analyzes your skill level and goals to create personalized training sessions. Get custom drills that adapt to your progress and available equipment for the day.',
+      imageSrc: '/uploadPhoto.png',
+      imageAlt: 'Photo Analysis',
+      title: 'Smart Photo Analysis',
+      description: 'Upload your photo and get analyzed across multiple categories. Get detailed ratings for clothing, skin, facial structure, hair, eyes, smile, and overall presence.',
       isReversed: false
     },
     {
-      imageSrc: '/bravoball_session.png',
-      imageAlt: 'Interactive Session Interface',
-      title: 'Interactive Training Sessions',
-      description: 'Follow along with guided sessions featuring drill videos and real-time timing. Watch demonstrations, time your drills, and track your performance as you train.',
+      imageSrc: '/profileSetup.png',
+      imageAlt: 'Personalized Profile',
+      title: 'Comprehensive User Profile',
+      description: 'Complete our detailed questionnaire covering demographics, style preferences, beauty routines, goals, lifestyle, and concerns. This information helps provide ultra-personalized recommendations.',
       isReversed: true
     },
     {
-      imageSrc: '/bravoball_questions.png',
-      imageAlt: 'Drill Catalog Interface',
-      title: 'Personalized Setup',
-      description: 'Tell us about your goals, available equipment, and space. We\'ll create the perfect training plan just for you.',
+      imageSrc: '/tasks.png',
+      imageAlt: 'Improvement Tasks',
+      title: 'Actionable Improvement Tasks',
+      description: 'Receive prioritized, ultra-specific tasks tailored to your needs. Track your progress with our smart task management system and watch your transformation unfold.',
       isReversed: false
     },
     {
-      imageSrc: '/bravoball_progress.png',
-      imageAlt: 'Progress Tracking Interface',
-      title: 'Track Your Progress',
-      description: 'Monitor your improvement over time with detailed progress tracking. See your skill development visualized and get insights on areas to focus on.',
+      imageSrc: '/myRatings.png',
+      imageAlt: 'Detailed Ratings',
+      title: 'In-Depth Category Ratings',
+      description: 'View comprehensive scores for each category with professional interpretation. Tap any category to see detailed analysis and understand exactly where you excel and where you can improve.',
       isReversed: true
     }
   ];
 
   return (
     <Router>
+      <EmailSignupModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Container>
         <Nav>
           <NavGroup>
             <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
               <LogoWrapper>
-                <img src="/bravo_head.png" alt="Bravo" />
+                <img src="/logo.png" alt="Baddie" />
               </LogoWrapper>
-              <Logo>BravoBall</Logo>
+              <Logo>Baddie</Logo>
             </Link>
           </NavGroup>
           <NavEnd>
             <NavLink to="/">Home</NavLink>
-            <a href="https://apps.apple.com/us/app/bravoball/id6746950846" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', padding: '0.5rem 1rem', fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#4b4b4b', transition: 'color 0.2s ease' }}>Download</a>
           </NavEnd>
         </Nav>
         <MainContent>
           <Routes>
-            <Route path="/signup" element={<SignUpPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/issues" element={<ReleaseNotes />} />
-            <Route path="/delete-account-info" element={<DeleteAccountInfo />} />
             <Route path="/" element={
               <>
                 <HeroSection>
                   <div>
-                    <MainHeading>Personalized drills. Any place, any equipment, on-demand!</MainHeading>
-                    <GetStartedButton as="a" href="https://apps.apple.com/us/app/bravoball/id6746950846" target="_blank" rel="noopener noreferrer">Download Now</GetStartedButton>
+                    <MainHeading>TRANSFORM YOUR LOOK WITH PERSONALIZED STYLING</MainHeading>
+                    <GetStartedButton as="button" onClick={() => setIsModalOpen(true)}>Join the Waitlist</GetStartedButton>
                   </div>
-                  <AnimationWrapper>
-                    <RiveComponent />
-                  </AnimationWrapper>
+                  <LogoImageWrapper>
+                    <img src="/logo.png" alt="Baddie Logo" />
+                  </LogoImageWrapper>
                 </HeroSection>
 
                 <BenefitsSection>
@@ -140,21 +125,20 @@ function App() {
 
                 <CTASection>
                   <CTAImageWrapper>
-                    <img src="/bravo_head.png" alt="Bravo" />
+                    <img src="/logo.png" alt="Baddie" />
                   </CTAImageWrapper>
-                  <CTATitle>Ready to transform your game?</CTATitle>
-                  <GetStartedButton as="a" href="https://apps.apple.com/us/app/bravoball/id6746950846" target="_blank" rel="noopener noreferrer">Download Now</GetStartedButton>
+                  <CTATitle>Ready to transform your look?</CTATitle>
+                  <GetStartedButton as="button" onClick={() => setIsModalOpen(true)}>Join the Waitlist</GetStartedButton>
                 </CTASection>
               </>
             } />
           </Routes>
           <Footer>
             <FooterLinks>
-              <FooterLink to="/privacy">Privacy Policy</FooterLink>
-              <FooterLink to="/issues">Known Issues</FooterLink>
-              <FooterLink to="/delete-account-info">Delete Account</FooterLink>
+              <FooterLinkExternal href="http://aes-alb-692757062.us-east-2.elb.amazonaws.com/static/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</FooterLinkExternal>
+              <FooterLinkExternal href="http://aes-alb-692757062.us-east-2.elb.amazonaws.com/static/terms" target="_blank" rel="noopener noreferrer">Terms of Service</FooterLinkExternal>
             </FooterLinks>
-            <Copyright>© {new Date().getFullYear()} BravoBall. All rights reserved.</Copyright>
+            <Copyright>© {new Date().getFullYear()} Baddie. All rights reserved.</Copyright>
           </Footer>
         </MainContent>
       </Container>
@@ -166,7 +150,7 @@ const Container = styled.div`
   min-height: 100vh;
   background-color: #fff;
   color: #4b4b4b;
-  font-family: 'Poppins', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   overflow-x: hidden;
   padding: 0;
   width: 100%;
@@ -225,8 +209,8 @@ const LogoWrapper = styled.div`
 const Logo = styled.div`
   font-size: 1.5rem;
   font-weight: 400;
-  font-family: 'Potta One', cursive;
-  color: #F6C356;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: #6366f1;
   display: flex;
   align-items: center;
 `;
@@ -272,26 +256,28 @@ const HeroSection = styled.div`
 `;
 
 const MainHeading = styled.h1`
-  font-size: 1.25rem;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-  color: #4b4b4b;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: #1a1a1a;
   margin-bottom: 2rem;
   line-height: 1.2;
   text-align: center;
+  letter-spacing: -0.02em;
 `;
 
-const AnimationWrapper = styled.div`
+const LogoImageWrapper = styled.div`
   height: 360px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   
-  canvas {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 450px;
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: 360px;
+    max-height: 360px;
     object-fit: contain;
   }
   
@@ -299,8 +285,9 @@ const AnimationWrapper = styled.div`
     height: 280px;
     margin-bottom: 2rem;
     
-    canvas {
-      max-width: 360px;
+    img {
+      max-width: 280px;
+      max-height: 280px;
     }
   }
 `;
@@ -320,16 +307,16 @@ const Button = styled.button<ButtonProps>`
 `;
 
 const GetStartedButton = styled(Button)`
-  background-color: #F6C356;
+  background-color: #6366f1;
   color: #fff;
   border: none;
   padding: 0.875rem 1.75rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-weight: 700;
   font-size: 1rem;
   border-radius: 10px;
   margin: 0 auto;
-  box-shadow: 0 4px 0 #DAA520;
+  box-shadow: 0 4px 0 #4f46e5;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
@@ -338,14 +325,14 @@ const GetStartedButton = styled(Button)`
   
   &:hover {
     transform: translateY(-1px);
-    background-color: #FDDA0D;
+    background-color: #818cf8;
     color: #fff;
     text-decoration: none;
   }
   
   &:active {
     transform: translateY(2px);
-    box-shadow: 0 2px 0 #FDDA0D;
+    box-shadow: 0 2px 0 #4f46e5;
   }
 
   @media (max-width: 768px) {
@@ -358,14 +345,14 @@ const GetStartedButton = styled(Button)`
 const NavLink = styled(Link)`
   text-decoration: none;
   padding: 0.5rem 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
   color: #4b4b4b;
   transition: color 0.2s ease;
 
   &:hover {
-    color: #F6C356;
+    color: #6366f1;
   }
 `;
 
@@ -440,7 +427,7 @@ const CTAImageWrapper = styled.div`
 `;
 
 const CTATitle = styled.h2`
-  font-family: 'Poppins', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
   color: #333;
@@ -459,14 +446,28 @@ const FooterLinks = styled.div`
 const FooterLink = styled(Link)`
   text-decoration: none;
   padding: 0.5rem 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
   color: #4b4b4b;
   transition: color 0.2s ease;
 
   &:hover {
-    color: #F6C356;
+    color: #6366f1;
+  }
+`;
+
+const FooterLinkExternal = styled.a`
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4b4b4b;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #6366f1;
   }
 `;
 

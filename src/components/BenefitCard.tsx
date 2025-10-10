@@ -39,17 +39,17 @@ const BenefitIcon = styled.div`
 `;
 
 const BenefitTitle = styled.h3`
-  font-family: 'Poppins', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: #4b4b4b;
+  color: #1a1a1a;
   margin-bottom: 0.5rem;
 `;
 
 const BenefitText = styled.p`
-  font-family: 'Poppins', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #777;
+  color: #666;
   line-height: 1.4;
-`; 
+`;

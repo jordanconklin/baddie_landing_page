@@ -85,31 +85,29 @@ const FeatureContent = styled.div`
 `;
 
 const FeatureTitle = styled.h2`
-  font-family: 'Potta One', cursive;
-  font-size: 2rem;
-  font-weight: 400;
-  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
   margin-bottom: 1.5rem;
-  background: linear-gradient(to right, #F6C356, #E5B347);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
   }
 `;
 
 const FeatureDescription = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1rem;
   line-height: 1.6;
-  color: #999;
+  color: #666;
   max-width: 700px;
   margin: 0 auto;
   
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.5;
   }
-`; 
+`;
+

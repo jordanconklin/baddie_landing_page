@@ -1,21 +1,21 @@
 {
-  "short_name": "BravoBall",
-  "name": "BravoBall Soccer Training",
+  "short_name": "Baddie",
+  "name": "Baddie - Smart Styling App",
   "icons": [
     {
-      "src": "bravo.png",
+      "src": "logo.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "bravo.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "bravo.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
