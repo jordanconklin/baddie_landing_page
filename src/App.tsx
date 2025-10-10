@@ -443,20 +443,6 @@ const FooterLinks = styled.div`
   margin-bottom: 1rem;
 `;
 
-const FooterLink = styled(Link)`
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #4b4b4b;
-  transition: color 0.2s ease;
-
-  &:hover {
-    color: #6366f1;
-  }
-`;
-
 const FooterLinkExternal = styled.a`
   text-decoration: none;
   padding: 0.5rem 1rem;

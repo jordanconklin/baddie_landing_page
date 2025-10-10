@@ -275,14 +275,6 @@ const ErrorMessage = styled.div`
   font-size: 0.875rem;
 `;
 
-const PrivacyNote = styled.p`
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  font-size: 0.75rem;
-  color: #9ca3af;
-  text-align: center;
-  margin: 0;
-`;
-
 const SuccessContent = styled.div`
   text-align: center;
   padding: 2rem 0;
