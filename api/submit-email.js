@@ -75,8 +75,9 @@ module.exports = async (req, res) => {
       
       // Handle duplicate email
       if (error.code === '23505') {
-        return res.status(400).json({ 
-          error: 'This email is already registered!' 
+        return res.status(200).json({ 
+          success: true,
+          message: "You're already on the waitlist! We'll notify you when Baddie launches." 
         });
       }
       
