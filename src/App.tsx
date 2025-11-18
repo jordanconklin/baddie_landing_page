@@ -138,6 +138,10 @@ function App() {
               <FooterLinkExternal href="http://aes-alb-692757062.us-east-2.elb.amazonaws.com/static/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</FooterLinkExternal>
               <FooterLinkExternal href="http://aes-alb-692757062.us-east-2.elb.amazonaws.com/static/terms" target="_blank" rel="noopener noreferrer">Terms of Service</FooterLinkExternal>
             </FooterLinks>
+            <CompanyInfo>
+              Baddie is owned and operated by{' '}
+              <FooterLinkExternal href="https://bj-prod-launchpad.lovable.app/" target="_blank" rel="noopener noreferrer">BJ Productions LLC</FooterLinkExternal>
+            </CompanyInfo>
             <Copyright>© {new Date().getFullYear()} Baddie. All rights reserved.</Copyright>
           </Footer>
         </MainContent>
@@ -441,6 +445,18 @@ const CTATitle = styled.h2`
 
 const FooterLinks = styled.div`
   margin-bottom: 1rem;
+`;
+
+const CompanyInfo = styled.div`
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+  
+  a {
+    color: #6366f1;
+    font-weight: 600;
+  }
 `;
 
 const FooterLinkExternal = styled.a`
